@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>THE GREAT NUMBER GAME</title>
+</head>
+<body>
+    <h1>Welcome to the great number game!</h1>
+    <p>I am thinking of a number between 1 and 100..</p>
+    <p>Try and guess what it is!</p>
+    <form action="/process" method="post">
+        <input type="text" name="guess">
+    </form>
+    
+    <p>Your guess: {{guess}}</p>
+    {%if a1:%}
+        {%if a1 == a2:%}
+            <p>You are Correct!</p>
+            <form action="/" method ='get'>
+                <input type="submit" name="again" value= "Play again?">
+            </form>
+        {%endif%}
+        {%if a1 > a2:%}
+            <p>too high</p>
+        {%endif%}
+        {%if a2 > a1:%}
+            <p>too low</p>
+        {%endif%}
+    {%endif%}
+    
+    
+</body>
+</html>
